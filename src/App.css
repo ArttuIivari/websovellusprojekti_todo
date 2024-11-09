@@ -1,0 +1,12 @@
+
+#container{
+  padding:16px;
+  text-align: center;
+  border: solid;
+}
+li {
+  margin-bottom: 8px;
+}
+.delete-button {
+  margin-left: 16px;
+}
