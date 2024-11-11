@@ -16,7 +16,7 @@ export default function Authentication({authenticationMode}){
     const handleSubmit = async(e)=>{
         e.preventDefault();
         try{
-            if(authenticationMode === authenticationMode.Register){
+            if(authenticationMode === AuthenticationMode.Register){
                 await signUp()
                 navigate("/signin")
             } else{
@@ -41,11 +41,11 @@ export default function Authentication({authenticationMode}){
                     <input type="password" value={user.password} onChange={e => setUser({...user,password: e.target.value})}/>
                 </div>
                 <div>
-                    <button>{authenticationMode === authenticationMode.Login ? "Login" : "Submit"}</button>
+                    <button>{authenticationMode === AuthenticationMode.Login ? "Login" : "Submit"}</button>
                 </div>
                 <div>
-                    <Link to={authenticationMode === authenticationMode.Login ? "/signup":"/signin"}>
-                        {authenticationMode === authenticationMode.Login ? "No account? Sign up" : "Already signed up? Sign in"}
+                    <Link to={authenticationMode === AuthenticationMode.Login ? "/signup":"/signin"}>
+                        {authenticationMode === AuthenticationMode.Login ? "No account? Sign up" : "Already signed up? Sign in"}
                     </Link>
                 </div>
             </form>
